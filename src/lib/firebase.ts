@@ -1,18 +1,19 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-// Firestore is no longer used, so the import is removed.
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  "projectId": "studio-839078640-3ea2f",
-  "appId": "1:611703974793:web:969205538582d0e7458f58",
-  "apiKey": "AIzaSyCoQU_1kJC1bKkvhEVkCZ6TsYMKlM9Muy4",
-  "authDomain": "studio-839078640-3ea2f.firebaseapp.com",
-  "measurementId": "",
-  "messagingSenderId": "611703974793"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "AIzaSyCoQU_1kJC1bKkvhEVkCZ6TsYMKlM9Muy4",
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || "studio-839078640-3ea2f.firebaseapp.com",
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || "studio-839078640-3ea2f",
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || "studio-839078640-3ea2f.appspot.com",
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || "611703974793",
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || "1:611703974793:web:969205538582d0e7458f58",
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID || "",
 };
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const auth = getAuth(app);
-// The db export is removed as Firestore is no longer in use.
+const db = getFirestore(app);
 
-export { app, auth };
+export { app, auth, db };

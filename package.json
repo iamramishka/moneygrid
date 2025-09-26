@@ -6,10 +6,12 @@
     "dev": "next dev --turbopack",
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
     "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
-    "build": "NODE_ENV=production next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "export": "next build && next export",
+    "deploy": "npm run build && echo. > out/.nojekyll"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.14.1",

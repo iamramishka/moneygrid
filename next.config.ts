@@ -1,7 +1,12 @@
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'export',
+  trailingSlash: true,
+  skipTrailingSlashRedirect: true,
+  distDir: 'out',
+  basePath: '/moneygrid',
+  assetPrefix: '/moneygrid/',
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -9,6 +14,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    unoptimized: true, // Required for static export
     remotePatterns: [
       {
         protocol: 'https',

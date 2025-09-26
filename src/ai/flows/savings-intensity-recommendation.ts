@@ -1,5 +1,3 @@
-'use server';
-
 /**
  * @fileOverview Provides AI-powered recommendations for daily savings amounts based on user-selected savings intensity.
  *
