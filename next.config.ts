@@ -5,8 +5,6 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   skipTrailingSlashRedirect: true,
   distDir: 'out',
-  basePath: '/moneygrid',
-  assetPrefix: '/moneygrid/',
   typescript: {
     ignoreBuildErrors: true,
   },
